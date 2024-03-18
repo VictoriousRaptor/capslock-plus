@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 
 ; If the script is not elevated, relaunch as administrator and kill current instance:
 full_command_line := DllCall("GetCommandLine", "str")

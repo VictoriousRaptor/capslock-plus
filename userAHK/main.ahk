@@ -1,4 +1,4 @@
-; 1. Include the .ahk file(s) containing custom key functions here,
+﻿; 1. Include the .ahk file(s) containing custom key functions here,
 ;   or just put the functions here.
 ;   * A key function must start with "keyFunc_" (case insensitive)
 
@@ -11,8 +11,24 @@
 ; 3. Save, reload Capslock+ (CapsLock+F5)
 ; 4. Press `CapsLock+F7` to invoke the function
 
-#include demo.ahk
+#include ime_lib.ahk
 
-keyFunc_example1(){
-  msgbox, example1
+keyFunc_insertQuotes(){
+    mode := IME_GetConvMode()
+    if (mode == 0 || mode == 1) {
+        keyFunc_doubleChar("""")
+    }
+    else if (mode == 1025) {
+        keyFunc_doubleChar("“","”")
+    }
+}
+
+keyFunc_insertParen(){
+    mode := IME_GetConvMode()
+    if (mode == 0 || mode == 1) {
+        keyFunc_doubleChar("(",")")
+    }
+    else if (mode == 1025) {
+        keyFunc_doubleChar("（","）")
+    }
 }
