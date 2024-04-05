@@ -860,12 +860,16 @@ keyfunc_wheel_down(){
 
 ; 左滑滚轮
 keyFunc_wheel_left(){
+    Critical, On
     Send {WheelLeft}
+    Critical, Off
 }
 
 ; 右滑滚轮
 keyFunc_wheel_right(){
+    Critical, On
     Send {WheelRight}
+    Critical, Off
 }
  
 ;keys functions end-------------
