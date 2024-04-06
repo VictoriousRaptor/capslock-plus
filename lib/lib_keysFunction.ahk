@@ -229,28 +229,23 @@ keyFunc_doubleChar(char1,char2:=""){
     }
     charLen:=StrLen(char2)
     selText:=getSelText()
-    ClipboardOld:=ClipboardAll
     if(selText)
     {
-        Clipboard:=char1 . selText . char2
-        SendInput, +{insert}
+        text :=char1 . selText . char2
+        SendInput, %text%
     }
     else
     {
-        Clipboard:=char1 . char2
-        SendInput, +{insert}{left %charLen%}
+        text := char1 . char2
+        SendInput, %text%
     }
     Sleep, 100
-    Clipboard:=ClipboardOld
     Return
 }
 
 keyFunc_sendChar(char){
-    ClipboardOld:=ClipboardAll
-    Clipboard:=char
-    SendInput, +{insert}
+    SendInput, %char%
     Sleep, 50
-    Clipboard:=ClipboardOld
     return
 }
 
