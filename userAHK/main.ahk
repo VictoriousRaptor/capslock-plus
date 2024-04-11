@@ -32,3 +32,17 @@ keyFunc_insertParen(){
         keyFunc_doubleChar("（","）")
     }
 }
+
+keyFunc_insertBrackets(){
+    mode := IME_GetConvMode()
+    if (mode == 0 || mode == 1) {
+        keyFunc_doubleChar("[","]")
+    }
+    else if (mode == 1025) {
+        keyFunc_doubleChar("【","】")
+    }
+}
+
+keyFunc_ctrlAltV(){
+    Send, ^!v
+}
