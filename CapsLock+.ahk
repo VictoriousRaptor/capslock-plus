@@ -30,7 +30,7 @@ global caClipboardAll ;capslock+alt clipboard
 global sClipboardAll ;system clipboard
 global whichClipboardNow  ;0 system clipboard; 1 capslock+ clipboard; 2 capslock+alt clipboard
 ;  global clipSaveArr=[]
-allowRunOnClipboardChange:=true
+allowRunOnClipboardChange:=false
 
 
 #Include lib
@@ -136,7 +136,7 @@ if (allowRunOnClipboardChange && !CapsLock && CLsets.global.allowClipboard != "0
     }
     whichClipboardNow:=0
 }
-allowRunOnClipboardChange:=true
+; allowRunOnClipboardChange:=true
 return
 
 
