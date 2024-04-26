@@ -1,4 +1,4 @@
-﻿; keys functions start-------------
+; keys functions start-------------
 ; 所有按键对应功能都放在这，为防止从set.ini通过按键设置调用到非按键功能函数，
 ; 规定函数以"keyFunc_"开头
 
@@ -237,7 +237,7 @@ keyFunc_doubleChar(char1,char2:=""){
     else
     {
         text := char1 . char2
-        SendInput, %text%
+        SendInput, %text%{left %charLen%}
     }
     Sleep, 100
     Return
