@@ -87,6 +87,8 @@ default_hotkey_scheme=capslox
 loadScript=myScript1.js,myScript2.js, myScript3.js , myScript4.js
 
 ;按下 Capslock+LAlt 键时，临时改变鼠标速度，范围是1~20。不设置的话默认3
+allowMouseSpeed=1
+
 ;可以用 Capslock+LAlt+鼠标滚轮上 / 下快速设置这个值
 mouseSpeed=3
 

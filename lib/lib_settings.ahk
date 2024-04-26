@@ -313,6 +313,9 @@ else
 if(CLsets.Global.allowClipboard!="0")
 	CLsets.Global.allowClipboard:=1
 
+if(CLsets.Global.allowMouseSpeed!="0")
+	CLsets.Global.allowMouseSpeed:=1
+
 return
 
 ; 支持ctrl+alt+Capslock启动capslock+

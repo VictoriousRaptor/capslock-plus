@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 
 ; If the script is not elevated, relaunch as administrator and kill current instance:
 full_command_line := DllCall("GetCommandLine", "str")
@@ -85,7 +85,8 @@ ctrlZ:=CapsLock2:=CapsLock:=1
 
 SetTimer, setCapsLock2, -300 ; 300ms 犹豫操作时间
 
-settimer, changeMouseSpeed, 50 ;暂时修改鼠标速度
+if (CLsets.global.allowMouseSpeed != "0")
+    settimer, changeMouseSpeed, 50 ;暂时修改鼠标速度
 
 KeyWait, Capslock
 CapsLock:="" ;Capslock最优先置空，来关闭 Capslock+ 功能的触发

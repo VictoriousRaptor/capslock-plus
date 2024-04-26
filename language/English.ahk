@@ -92,6 +92,8 @@ default_hotkey_scheme=capslox
 loadScript=myScript1.js,myScript2.js, myScript3.js , myScript4.js
 
 ; When the Capslock + LAlt key is pressed, the mouse speed will temporarily change,
+allowMouseSpeed=1
+
 ; the range is 1 ~ 20. The default is 3.
 ; You can use Capslock + LAlt + mouse wheel up / down to quickly set this value.
 mouseSpeed=3
