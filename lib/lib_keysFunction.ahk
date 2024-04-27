@@ -1,4 +1,4 @@
-; keys functions start-------------
+﻿; keys functions start-------------
 ; 所有按键对应功能都放在这，为防止从set.ini通过按键设置调用到非按键功能函数，
 ; 规定函数以"keyFunc_"开头
 
@@ -232,12 +232,13 @@ keyFunc_doubleChar(char1,char2:=""){
     if(selText)
     {
         text :=char1 . selText . char2
-        SendInput, %text%
+        SendRaw, %text%
     }
     else
     {
         text := char1 . char2
-        SendInput, %text%{left %charLen%}
+        SendRaw, %text%
+        SendInput, {left %charLen%}
     }
     Sleep, 100
     Return
@@ -855,16 +856,12 @@ keyfunc_wheel_down(){
 
 ; 左滑滚轮
 keyFunc_wheel_left(){
-    Critical, On
-    Send {WheelLeft}
-    Critical, Off
+    SendInput {WheelLeft}
 }
 
 ; 右滑滚轮
 keyFunc_wheel_right(){
-    Critical, On
-    Send {WheelRight}
-    Critical, Off
+    SendInput {WheelRight}
 }
  
 ;keys functions end-------------
