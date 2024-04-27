@@ -1,4 +1,4 @@
-﻿; 1. Include the .ahk file(s) containing custom key functions here,
+; 1. Include the .ahk file(s) containing custom key functions here,
 ;   or just put the functions here.
 ;   * A key function must start with "keyFunc_" (case insensitive)
 
@@ -45,4 +45,7 @@ keyFunc_insertBrackets(){
 
 keyFunc_ctrlAltV(){
     Send, ^!v
+    Send, {CtrlUp}
+    Send, {AltUp}
+    Return
 }
