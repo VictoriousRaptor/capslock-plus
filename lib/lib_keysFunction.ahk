@@ -232,12 +232,12 @@ keyFunc_doubleChar(char1,char2:=""){
     if(selText)
     {
         text :=char1 . selText . char2
-        SendRaw, %text%
+        SendInput, {Text}%text%
     }
     else
     {
         text := char1 . char2
-        SendRaw, %text%
+        SendInput, {Text}%text%
         SendInput, {left %charLen%}
     }
     Sleep, 100

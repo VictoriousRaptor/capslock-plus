@@ -1,4 +1,4 @@
-; 1. Include the .ahk file(s) containing custom key functions here,
+﻿; 1. Include the .ahk file(s) containing custom key functions here,
 ;   or just put the functions here.
 ;   * A key function must start with "keyFunc_" (case insensitive)
 
@@ -21,6 +21,7 @@ keyFunc_insertQuotes(){
     else if (mode == 1025) {
         keyFunc_doubleChar("“","”")
     }
+    Return
 }
 
 keyFunc_insertParen(){
@@ -31,6 +32,7 @@ keyFunc_insertParen(){
     else if (mode == 1025) {
         keyFunc_doubleChar("（","）")
     }
+    Return
 }
 
 keyFunc_insertBrackets(){
@@ -41,11 +43,12 @@ keyFunc_insertBrackets(){
     else if (mode == 1025) {
         keyFunc_doubleChar("【","】")
     }
+    Return
 }
 
 keyFunc_ctrlAltV(){
-    Send, ^!v
-    Send, {CtrlUp}
-    Send, {AltUp}
+    SendInput, ^!v
+    SendInput, {CtrlUp}
+    SendInput, {AltUp}
     Return
 }
