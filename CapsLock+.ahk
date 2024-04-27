@@ -124,6 +124,7 @@ setCapsLock2:
 CapsLock2:=""
 return
 
+#if CLsets.global.allowClipboard != "0"
 OnClipboardChange:  ; 剪贴板内容改变时将运行
 
 ; 如果有复制操作时，capslock键没有按下，那就是系统原生复制
@@ -137,8 +138,9 @@ if (allowRunOnClipboardChange && !CapsLock && CLsets.global.allowClipboard != "0
     }
     whichClipboardNow:=0
 }
-; allowRunOnClipboardChange:=true
+allowRunOnClipboardChange:=true
 return
+#if
 
 
 ;----------------------------keys-set-start-----------------------------
@@ -327,6 +329,19 @@ Return
 ;  Capslock2:=""
 ;  return
 
+;------------caps+shift
+
++[::
+try
+    runFunc(keyset.caps_shift_leftSquareBracket)
+Capslock2:=""
+Return
+
++]::
+try
+    runFunc(keyset.caps_shift_rightSquareBracket)
+Capslock2:=""
+Return
 
 
 ;---------------------caps+lalt----------------
